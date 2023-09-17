@@ -38,7 +38,7 @@ function displayCharts(id) {
 
     
         // Create a horizontal bar chart with a dropdown menu to display the top 10 OTUs found in that individual.
-        // Trace for the otuIds
+        // Trace for the bar chart
 
         let trace1 = {
 
@@ -54,16 +54,35 @@ function displayCharts(id) {
 
 
         // Apply a title to the layout
-        let layout = {
+        let layout1 = {
             title: 'Top 10 Bacteria Cultures Found'
         };
 
 
-        // Render the plot to the div tag with id "plot"
-        Plotly.newPlot('bar', traceOtuIDs, layout);
+        // Render the plot to the div tag with id 'bar'
+        Plotly.newPlot('bar', traceOtuIDs, layout1);
 
         // Create a bubble chart that displays each sample.
-        
+
+        // Trace for the bubble chart
+        let trace2 = {
+
+            x: otuIds,
+            y: sampleValues,
+            text: otuLabels,
+            mode: 'markers',
+            marker: {
+                color: otuIds,
+                size: sampleValues
+            },
+            type : 'scatter'
+        }
+
+        // Data trace arrary
+        let traceBubble = [trace2];
+
+        // Render the plot to the div tag with id 'bubble'
+        Plotly.newPlot('bubble', traceBubble);
 
         // Display the sample metadata, i.e., an individual's demographic information.
 
