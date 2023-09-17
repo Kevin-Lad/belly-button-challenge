@@ -88,6 +88,28 @@ function displayCharts(id) {
 
         // Display each key-value pair from the metadata JSON object somewhere on the page.
 
+        let metaData = data.metadata;
+
+        let selectedMeta = metaData.filter(meta => meta.id == id);
+
+        console.log(selectedMeta);
+
+        let metaId = selectedMeta[0].id;
+        let metaEthnicity = selectedMeta[0].ethnicity;
+        let metaGender = selectedMeta[0].gender;
+        let metaAge = selectedMeta[0].age;
+        let metaLocation = selectedMeta[0].location;
+        let metaBbType = selectedMeta[0].bbtype;
+        let metaWfreq = selectedMeta[0].wfreq;
+
+        let table = [
+
+            {id: metaId
+        ]
+
+        
+
+
 
     });
 
