@@ -91,7 +91,7 @@ function displayCharts(id) {
 
        demographics(id, data);
     });
-};
+}
 
 
 function optionChanged(selectedId) {
